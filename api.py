@@ -16,3 +16,4 @@ def score_endpoint(payload: dict):
         return score(payload)
     except KeyError as e:
         raise HTTPException(status_code=400, detail=f"Missing field: {e}")
+

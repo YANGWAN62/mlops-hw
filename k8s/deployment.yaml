@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mlops-hw
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mlops-hw
+  template:
+    metadata:
+      labels:
+        app: mlops-hw
+    spec:
+      containers:
+      - name: mlops-hw
+        image: mlops-hw:latest
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8000
